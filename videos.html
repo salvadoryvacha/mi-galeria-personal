@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos - Mi Galería Personal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-title">Mi Galería</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Principal</a></li>
+                    <li><a href="dibujos.html" class="nav-link">Dibujos</a></li>
+                    <li><a href="videos.html" class="nav-link active">Videos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Galería de Videos</h2>
+            <p>Capturas y contenido audiovisual. Explora esta colección de imágenes relacionadas con proyectos de video.</p>
+        </section>
+
+        <section class="gallery">
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="showImageModal('VIDEO/Captura de pantalla 2024-08-31 113755.png', 'Captura de pantalla del 31 de agosto de 2024. Imagen tomada durante la edición de un proyecto audiovisual, mostrando el proceso de trabajo en video.')">
+                    <img src="VIDEO/Captura de pantalla 2024-08-31 113755.png" alt="Captura de video 31 agosto 2024">
+                    <div class="overlay">
+                        <span>Ver imagen</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="showImageModal('VIDEO/Captura de pantalla 2024-09-02 161106.png', 'Captura de pantalla del 2 de septiembre de 2024. Primera imagen del día mostrando el progreso en la producción de contenido audiovisual.')">
+                    <img src="VIDEO/Captura de pantalla 2024-09-02 161106.png" alt="Captura de video 2 septiembre 2024 - 16:11">
+                    <div class="overlay">
+                        <span>Ver imagen</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="showImageModal('VIDEO/Captura de pantalla 2024-09-02 161204.png', 'Captura de pantalla del 2 de septiembre de 2024. Segunda imagen del proceso de edición, documentando diferentes etapas del trabajo en video.')">
+                    <img src="VIDEO/Captura de pantalla 2024-09-02 161204.png" alt="Captura de video 2 septiembre 2024 - 16:12">
+                    <div class="overlay">
+                        <span>Ver imagen</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="showImageModal('VIDEO/Captura de pantalla 2024-09-02 161307.png', 'Captura de pantalla del 2 de septiembre de 2024. Última imagen de la sesión, mostrando la finalización de una etapa importante en el proyecto audiovisual.')">
+                    <img src="VIDEO/Captura de pantalla 2024-09-02 161307.png" alt="Captura de video 2 septiembre 2024 - 16:13">
+                    <div class="overlay">
+                        <span>Ver imagen</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para mostrar imágenes -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-description">
+                <p id="modalText"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

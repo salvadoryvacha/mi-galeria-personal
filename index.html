@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Galería Personal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-title">Mi Galería</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Principal</a></li>
+                    <li><a href="dibujos.html" class="nav-link">Dibujos</a></li>
+                    <li><a href="videos.html" class="nav-link">Videos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Página Principal</h2>
+            <p>Bienvenido a mi galería personal. Aquí puedes navegar entre diferentes secciones de mi trabajo.</p>
+        </section>
+
+        <section class="gallery">
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="showImageModal('PRINCIPAL/Captura de pantalla 2024-06-28 141008.png', 'Captura de pantalla del 28 de junio de 2024. Esta imagen muestra el progreso de un proyecto en desarrollo durante las primeras etapas del trabajo.')">
+                    <img src="PRINCIPAL/Captura de pantalla 2024-06-28 141008.png" alt="Captura de pantalla 28 junio 2024">
+                    <div class="overlay">
+                        <span>Ver imagen</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="showImageModal('PRINCIPAL/Captura de pantalla 2024-07-08 180304.png', 'Captura de pantalla del 8 de julio de 2024. Documentación del avance del proyecto mostrando nuevas funcionalidades implementadas.')">
+                    <img src="PRINCIPAL/Captura de pantalla 2024-07-08 180304.png" alt="Captura de pantalla 8 julio 2024">
+                    <div class="overlay">
+                        <span>Ver imagen</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="showImageModal('PRINCIPAL/Captura de pantalla 2024-07-16 093830.png', 'Captura de pantalla del 16 de julio de 2024. Imagen tomada durante la fase de pruebas y ajustes del sistema.')">
+                    <img src="PRINCIPAL/Captura de pantalla 2024-07-16 093830.png" alt="Captura de pantalla 16 julio 2024 - Mañana">
+                    <div class="overlay">
+                        <span>Ver imagen</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="showImageModal('PRINCIPAL/Captura de pantalla 2024-07-16 094242.png', 'Captura de pantalla del 16 de julio de 2024. Segunda imagen del mismo día mostrando diferentes aspectos del desarrollo del proyecto.')">
+                    <img src="PRINCIPAL/Captura de pantalla 2024-07-16 094242.png" alt="Captura de pantalla 16 julio 2024 - Tarde">
+                    <div class="overlay">
+                        <span>Ver imagen</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para mostrar imágenes -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-description">
+                <p id="modalText"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

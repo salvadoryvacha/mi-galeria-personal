@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibujos - Mi Galería Personal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-title">Mi Galería</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Principal</a></li>
+                    <li><a href="dibujos.html" class="nav-link active">Dibujos</a></li>
+                    <li><a href="videos.html" class="nav-link">Videos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Galería de Dibujos</h2>
+            <p>Colección de dibujos y arte digital. Haz clic en cualquier imagen para verla en detalle.</p>
+        </section>
+
+        <section class="gallery">
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="showImageModal('DIBUJOS/1.png', 'Dibujo digital creativo. Esta imagen representa una exploración artística con elementos gráficos únicos y un estilo personal distintivo.')">
+                    <img src="DIBUJOS/1.png" alt="Dibujo 1">
+                    <div class="overlay">
+                        <span>Ver dibujo</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="showImageModal('DIBUJOS/electricidad.jfif', 'Ilustración relacionada con electricidad. Este dibujo explora conceptos eléctricos y energéticos a través de representaciones visuales creativas.')">
+                    <img src="DIBUJOS/electricidad.jfif" alt="Dibujo de electricidad">
+                    <div class="overlay">
+                        <span>Ver dibujo</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="showImageModal('DIBUJOS/Imagen1.jpg', 'Primera imagen de la colección. Una pieza artística que muestra técnicas mixtas y un enfoque experimental en la composición visual.')">
+                    <img src="DIBUJOS/Imagen1.jpg" alt="Imagen 1">
+                    <div class="overlay">
+                        <span>Ver dibujo</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="showImageModal('DIBUJOS/WIN_20200219_17_45_32_Pro.jpg', 'Fotografía de dibujo tomada el 19 de febrero de 2020. Trabajo realizado a mano alzada que muestra el proceso creativo y técnicas tradicionales de dibujo.')">
+                    <img src="DIBUJOS/WIN_20200219_17_45_32_Pro.jpg" alt="Dibujo 19 febrero 2020">
+                    <div class="overlay">
+                        <span>Ver dibujo</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para mostrar imágenes -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-description">
+                <p id="modalText"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
