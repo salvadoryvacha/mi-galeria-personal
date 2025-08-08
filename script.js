@@ -110,6 +110,134 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Variables del carrusel
+let currentSlide = 0;
+let totalSlides = 0;
+let carouselTrack = null;
+let indicators = null;
+let autoSlideInterval = null;
+
+// Función para inicializar el carrusel
+function initializeCarousel() {
+    carouselTrack = document.getElementById('carouselTrack');
+    indicators = document.querySelectorAll('.indicator');
+    
+    if (carouselTrack) {
+        totalSlides = carouselTrack.children.length;
+        updateCarousel();
+        startAutoSlide();
+    }
+}
+
+// Función para ir a la siguiente imagen
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+    resetAutoSlide();
+}
+
+// Función para ir a la imagen anterior
+function previousSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+    resetAutoSlide();
+}
+
+// Función para ir a una imagen específica
+function goToSlide(slideIndex) {
+    currentSlide = slideIndex;
+    updateCarousel();
+    resetAutoSlide();
+}
+
+// Función para actualizar la posición del carrusel
+function updateCarousel() {
+    if (carouselTrack) {
+        const translateX = -currentSlide * 100;
+        carouselTrack.style.transform = `translateX(${translateX}%)`;
+        
+        // Actualizar indicadores
+        if (indicators) {
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+        
+        // Actualizar clases activas para animaciones
+        const slides = carouselTrack.children;
+        Array.from(slides).forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentSlide);
+        });
+    }
+}
+
+// Función para iniciar el auto-slide
+function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+        nextSlide();
+    }, 5000); // Cambia cada 5 segundos
+}
+
+// Función para resetear el auto-slide
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+}
+
+// Función para pausar el auto-slide cuando el usuario interactúa
+function pauseAutoSlide() {
+    clearInterval(autoSlideInterval);
+}
+
+// Función para reanudar el auto-slide
+function resumeAutoSlide() {
+    startAutoSlide();
+}
+
+// Soporte para gestos táctiles en móviles
+let touchStartX = 0;
+let touchEndX = 0;
+
+function handleTouchStart(e) {
+    touchStartX = e.changedTouches[0].screenX;
+}
+
+function handleTouchEnd(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const difference = touchStartX - touchEndX;
+    
+    if (Math.abs(difference) > swipeThreshold) {
+        if (difference > 0) {
+            nextSlide(); // Swipe izquierda = siguiente
+        } else {
+            previousSlide(); // Swipe derecha = anterior
+        }
+    }
+}
+
+// Soporte para teclado
+function handleKeyDown(e) {
+    if (document.querySelector('.carousel-section')) {
+        switch(e.key) {
+            case 'ArrowLeft':
+                previousSlide();
+                break;
+            case 'ArrowRight':
+                nextSlide();
+                break;
+            case ' ': // Barra espaciadora
+                e.preventDefault();
+                nextSlide();
+                break;
+        }
+    }
+}
+
 // Función para navegación suave entre páginas (efecto visual)
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
@@ -125,4 +253,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 150);
         });
     });
+    
+    // Inicializar carrusel si existe
+    initializeCarousel();
+    
+    // Agregar event listeners para el carrusel
+    const carouselWrapper = document.querySelector('.carousel-wrapper');
+    if (carouselWrapper) {
+        // Pausar auto-slide al pasar el mouse
+        carouselWrapper.addEventListener('mouseenter', pauseAutoSlide);
+        carouselWrapper.addEventListener('mouseleave', resumeAutoSlide);
+        
+        // Soporte táctil
+        carouselWrapper.addEventListener('touchstart', handleTouchStart, { passive: true });
+        carouselWrapper.addEventListener('touchend', handleTouchEnd, { passive: true });
+    }
+    
+    // Soporte de teclado
+    document.addEventListener('keydown', handleKeyDown);
 });

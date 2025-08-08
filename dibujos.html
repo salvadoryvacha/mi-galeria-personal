@@ -26,84 +26,173 @@
             <p>Colección de dibujos y arte digital. Haz clic en cualquier imagen para verla en detalle.</p>
         </section>
 
-        <section class="gallery">
-            <div class="gallery-grid">
-                <div class="gallery-item" onclick="showImageModal('DIBUJOS/1.png', 'Dibujo digital creativo. Esta imagen representa una exploración artística con elementos gráficos únicos y un estilo personal distintivo.')">
-                    <img src="DIBUJOS/1.png" alt="Dibujo 1">
-                    <div class="overlay">
-                        <span>Ver dibujo</span>
+        <section class="carousel-section">
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn" onclick="previousSlide()">‹</button>
+                
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide">
+                            <div class="gallery-item" onclick="showImageModal('DIBUJOS/1.png', 'Dibujo digital creativo. Esta imagen representa una exploración artística con elementos gráficos únicos y un estilo personal distintivo.')">
+                                <img src="DIBUJOS/1.png" alt="Dibujo 1">
+                                <div class="overlay">
+                                    <span>Ver dibujo</span>
+                                </div>
+                                <div class="slide-info">
+                                    <h3>Dibujo Digital</h3>
+                                    <p>Exploración artística creativa</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="gallery-item" onclick="showImageModal('DIBUJOS/electricidad.jfif', 'Ilustración relacionada con electricidad. Este dibujo explora conceptos eléctricos y energéticos a través de representaciones visuales creativas.')">
+                                <img src="DIBUJOS/electricidad.jfif" alt="Dibujo de electricidad">
+                                <div class="overlay">
+                                    <span>Ver dibujo</span>
+                                </div>
+                                <div class="slide-info">
+                                    <h3>Electricidad</h3>
+                                    <p>Conceptos eléctricos y energéticos</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="gallery-item" onclick="showImageModal('DIBUJOS/Imagen1.jpg', 'Primera imagen de la colección. Una pieza artística que muestra técnicas mixtas y un enfoque experimental en la composición visual.')">
+                                <img src="DIBUJOS/Imagen1.jpg" alt="Imagen 1">
+                                <div class="overlay">
+                                    <span>Ver dibujo</span>
+                                </div>
+                                <div class="slide-info">
+                                    <h3>Primera Colección</h3>
+                                    <p>Técnicas mixtas experimentales</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="gallery-item" onclick="showImageModal('DIBUJOS/WIN_20200219_17_45_32_Pro.jpg', 'Fotografía de dibujo tomada el 19 de febrero de 2020. Trabajo realizado a mano alzada que muestra el proceso creativo y técnicas tradicionales de dibujo.')">
+                                <img src="DIBUJOS/WIN_20200219_17_45_32_Pro.jpg" alt="Dibujo 19 febrero 2020">
+                                <div class="overlay">
+                                    <span>Ver dibujo</span>
+                                </div>
+                                <div class="slide-info">
+                                    <h3>Dibujo Tradicional</h3>
+                                    <p>Técnicas a mano alzada 2020</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="gallery-item" onclick="showImageModal('DIBUJOS/Captura de pantalla 2024-05-28 173533.png', 'Captura de pantalla del 28 de mayo de 2024. Muestra el proceso de creación digital y las herramientas utilizadas en el desarrollo artístico.')">
+                                <img src="DIBUJOS/Captura de pantalla 2024-05-28 173533.png" alt="Proceso creativo Mayo 2024">
+                                <div class="overlay">
+                                    <span>Ver dibujo</span>
+                                </div>
+                                <div class="slide-info">
+                                    <h3>Proceso Creativo</h3>
+                                    <p>Herramientas digitales Mayo 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="gallery-item" onclick="showImageModal('DIBUJOS/Captura de pantalla 2024-08-31 113755.png', 'Captura de pantalla del 31 de agosto de 2024. Documentación del flujo de trabajo artístico y técnicas digitales empleadas.')">
+                                <img src="DIBUJOS/Captura de pantalla 2024-08-31 113755.png" alt="Técnicas digitales Agosto 2024">
+                                <div class="overlay">
+                                    <span>Ver dibujo</span>
+                                </div>
+                                <div class="slide-info">
+                                    <h3>Técnicas Digitales</h3>
+                                    <p>Flujo de trabajo Agosto 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="gallery-item" onclick="showImageModal('DIBUJOS/Captura de pantalla 2024-09-02 161106.png', 'Captura de pantalla del 2 de septiembre de 2024. Primera imagen de una serie que documenta la evolución del proceso creativo durante esa sesión.')">
+                                <img src="DIBUJOS/Captura de pantalla 2024-09-02 161106.png" alt="Evolución creativa Septiembre 2024 - Parte 1">
+                                <div class="overlay">
+                                    <span>Ver dibujo</span>
+                                </div>
+                                <div class="slide-info">
+                                    <h3>Evolución Creativa I</h3>
+                                    <p>Primera parte Septiembre 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="gallery-item" onclick="showImageModal('DIBUJOS/Captura de pantalla 2024-09-02 161204.png', 'Captura de pantalla del 2 de septiembre de 2024. Segunda imagen de la serie, mostrando la progresión y refinamiento de las ideas artísticas.')">
+                                <img src="DIBUJOS/Captura de pantalla 2024-09-02 161204.png" alt="Evolución creativa Septiembre 2024 - Parte 2">
+                                <div class="overlay">
+                                    <span>Ver dibujo</span>
+                                </div>
+                                <div class="slide-info">
+                                    <h3>Evolución Creativa II</h3>
+                                    <p>Refinamiento de ideas</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="gallery-item" onclick="showImageModal('DIBUJOS/Captura de pantalla 2024-09-02 161307.png', 'Captura de pantalla del 2 de septiembre de 2024. Imagen final de la serie, representando la culminación del proceso creativo y la síntesis de ideas.')">
+                                <img src="DIBUJOS/Captura de pantalla 2024-09-02 161307.png" alt="Evolución creativa Septiembre 2024 - Final">
+                                <div class="overlay">
+                                    <span>Ver dibujo</span>
+                                </div>
+                                <div class="slide-info">
+                                    <h3>Evolución Final</h3>
+                                    <p>Síntesis creativa completa</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="gallery-item" onclick="showImageModal('DIBUJOS/carpintero.jfif', 'Ilustración de carpintero. Esta obra representa el arte del trabajo artesanal, capturando la esencia y dedicación del oficio tradicional de la carpintería.')">
+                                <img src="DIBUJOS/carpintero.jfif" alt="Dibujo de carpintero">
+                                <div class="overlay">
+                                    <span>Ver dibujo</span>
+                                </div>
+                                <div class="slide-info">
+                                    <h3>El Carpintero</h3>
+                                    <p>Arte del trabajo artesanal</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="gallery-item" onclick="showImageModal('DIBUJOS/Imagen4.jpg', 'Cuarta imagen de la colección. Una pieza que explora nuevas técnicas visuales y conceptos artísticos, expandiendo la narrativa creativa del portafolio.')">
+                                <img src="DIBUJOS/Imagen4.jpg" alt="Imagen 4">
+                                <div class="overlay">
+                                    <span>Ver dibujo</span>
+                                </div>
+                                <div class="slide-info">
+                                    <h3>Cuarta Colección</h3>
+                                    <p>Nuevas técnicas visuales</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="gallery-item" onclick="showImageModal('DIBUJOS/electricidad.jfif', 'Ilustración relacionada con electricidad. Este dibujo explora conceptos eléctricos y energéticos a través de representaciones visuales creativas.')">
-                    <img src="DIBUJOS/electricidad.jfif" alt="Dibujo de electricidad">
-                    <div class="overlay">
-                        <span>Ver dibujo</span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="showImageModal('DIBUJOS/Imagen1.jpg', 'Primera imagen de la colección. Una pieza artística que muestra técnicas mixtas y un enfoque experimental en la composición visual.')">
-                    <img src="DIBUJOS/Imagen1.jpg" alt="Imagen 1">
-                    <div class="overlay">
-                        <span>Ver dibujo</span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="showImageModal('DIBUJOS/WIN_20200219_17_45_32_Pro.jpg', 'Fotografía de dibujo tomada el 19 de febrero de 2020. Trabajo realizado a mano alzada que muestra el proceso creativo y técnicas tradicionales de dibujo.')">
-                    <img src="DIBUJOS/WIN_20200219_17_45_32_Pro.jpg" alt="Dibujo 19 febrero 2020">
-                    <div class="overlay">
-                        <span>Ver dibujo</span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="showImageModal('DIBUJOS/Captura de pantalla 2024-05-28 173533.png', 'Captura de pantalla del 28 de mayo de 2024. Muestra el proceso de creación digital y las herramientas utilizadas en el desarrollo artístico.')">
-                    <img src="DIBUJOS/Captura de pantalla 2024-05-28 173533.png" alt="Proceso creativo Mayo 2024">
-                    <div class="overlay">
-                        <span>Ver dibujo</span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="showImageModal('DIBUJOS/Captura de pantalla 2024-08-31 113755.png', 'Captura de pantalla del 31 de agosto de 2024. Documentación del flujo de trabajo artístico y técnicas digitales empleadas.')">
-                    <img src="DIBUJOS/Captura de pantalla 2024-08-31 113755.png" alt="Técnicas digitales Agosto 2024">
-                    <div class="overlay">
-                        <span>Ver dibujo</span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="showImageModal('DIBUJOS/Captura de pantalla 2024-09-02 161106.png', 'Captura de pantalla del 2 de septiembre de 2024. Primera imagen de una serie que documenta la evolución del proceso creativo durante esa sesión.')">
-                    <img src="DIBUJOS/Captura de pantalla 2024-09-02 161106.png" alt="Evolución creativa Septiembre 2024 - Parte 1">
-                    <div class="overlay">
-                        <span>Ver dibujo</span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="showImageModal('DIBUJOS/Captura de pantalla 2024-09-02 161204.png', 'Captura de pantalla del 2 de septiembre de 2024. Segunda imagen de la serie, mostrando la progresión y refinamiento de las ideas artísticas.')">
-                    <img src="DIBUJOS/Captura de pantalla 2024-09-02 161204.png" alt="Evolución creativa Septiembre 2024 - Parte 2">
-                    <div class="overlay">
-                        <span>Ver dibujo</span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="showImageModal('DIBUJOS/Captura de pantalla 2024-09-02 161307.png', 'Captura de pantalla del 2 de septiembre de 2024. Imagen final de la serie, representando la culminación del proceso creativo y la síntesis de ideas.')">
-                    <img src="DIBUJOS/Captura de pantalla 2024-09-02 161307.png" alt="Evolución creativa Septiembre 2024 - Final">
-                    <div class="overlay">
-                        <span>Ver dibujo</span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="showImageModal('DIBUJOS/carpintero.jfif', 'Ilustración de carpintero. Esta obra representa el arte del trabajo artesanal, capturando la esencia y dedicación del oficio tradicional de la carpintería.')">
-                    <img src="DIBUJOS/carpintero.jfif" alt="Dibujo de carpintero">
-                    <div class="overlay">
-                        <span>Ver dibujo</span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="showImageModal('DIBUJOS/Imagen4.jpg', 'Cuarta imagen de la colección. Una pieza que explora nuevas técnicas visuales y conceptos artísticos, expandiendo la narrativa creativa del portafolio.')">
-                    <img src="DIBUJOS/Imagen4.jpg" alt="Imagen 4">
-                    <div class="overlay">
-                        <span>Ver dibujo</span>
-                    </div>
-                </div>
+                <button class="carousel-btn next-btn" onclick="nextSlide()">›</button>
+            </div>
+            
+            <!-- Indicadores del carrusel -->
+            <div class="carousel-indicators">
+                <span class="indicator active" onclick="goToSlide(0)"></span>
+                <span class="indicator" onclick="goToSlide(1)"></span>
+                <span class="indicator" onclick="goToSlide(2)"></span>
+                <span class="indicator" onclick="goToSlide(3)"></span>
+                <span class="indicator" onclick="goToSlide(4)"></span>
+                <span class="indicator" onclick="goToSlide(5)"></span>
+                <span class="indicator" onclick="goToSlide(6)"></span>
+                <span class="indicator" onclick="goToSlide(7)"></span>
+                <span class="indicator" onclick="goToSlide(8)"></span>
+                <span class="indicator" onclick="goToSlide(9)"></span>
+                <span class="indicator" onclick="goToSlide(10)"></span>
             </div>
         </section>
     </main>
